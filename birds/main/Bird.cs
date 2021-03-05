@@ -18,10 +18,6 @@ namespace main
             }
             _weight = weight;
         }
-
-        public abstract void ToFly();
-
-        public abstract void ToSwim();
     }
     // Kiwi start
     public enum Kind
@@ -31,7 +27,7 @@ namespace main
         Smart
     };
 
-    internal class Kiwi : Bird
+    internal class Kiwi : Bird, IFlyable
     {
         private Kind _kind;
 
@@ -40,14 +36,9 @@ namespace main
             this._kind = kind;
         }
 
-        public override void ToFly()
+        public void ToFly()
         {
             Console.WriteLine("Kiwi " + _name + " flew");
-        }
-
-        public override void ToSwim()
-        {
-            throw new NotImplementedException();
         }
 
         public void BirdProperties()
@@ -65,7 +56,7 @@ namespace main
         LongNosedRedhead
     };
 
-    internal class Duck : Bird
+    internal class Duck : Bird, IFlyable, ISwimable
     {
         private Variety _variety;
 
@@ -73,12 +64,12 @@ namespace main
         {
             this._variety = variety;
         }
-        public override void ToFly()
+        public void ToFly()
         {
             Console.WriteLine("Duck " + _name + " flew");
         }
 
-        public override void ToSwim()
+        public void ToSwim()
         {
             Console.WriteLine("And duck " + _name + " swam");
         }
@@ -97,7 +88,7 @@ namespace main
         Female
     };
 
-    internal class Penguin : Bird
+    internal class Penguin : Bird, ISwimable
     {
         private Sex _sex;
 
@@ -106,12 +97,7 @@ namespace main
             this._sex = sex;
         }
 
-        public override void ToFly()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ToSwim()
+        public void ToSwim()
         {
             Console.WriteLine("Penguin " + _name + " swam");
         }
@@ -131,7 +117,7 @@ namespace main
         Flint
     };
 
-    internal class Parrot : Bird
+    internal class Parrot : Bird, IFlyable
     {
         private Words _words;
 
@@ -139,14 +125,9 @@ namespace main
         {
             this._words = words;
         }
-        public override void ToFly()
+        public void ToFly()
         {
             Console.WriteLine("Parrot " + _name + " flew");
-        }
-
-        public override void ToSwim()
-        {
-            throw new NotImplementedException();
         }
 
         public void BirdProperties()

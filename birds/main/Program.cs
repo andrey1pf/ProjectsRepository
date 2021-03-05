@@ -17,7 +17,6 @@
             penguin.ToSwim();
             penguin.BirdProperties();
             var parrot = new Parrot("Kesha", 11, "green&yellow", Words.AlexTurner);
-            parrot.ToSwim();
             parrot.ToFly();
             parrot.BirdProperties();
         }
