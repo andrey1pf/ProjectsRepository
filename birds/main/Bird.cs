@@ -19,7 +19,7 @@ namespace main
             _weight = weight;
         }
     }
-    // Kiwi start
+    //Kiwi start
     public enum Kind
     {
         Sad,
