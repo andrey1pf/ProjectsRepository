@@ -2,7 +2,7 @@
 
 namespace main
 {
-    public abstract class Bird : IFly, ISwim
+    public abstract class Bird
     {
         protected string _name;
         protected double _weight;
@@ -19,9 +19,9 @@ namespace main
             _weight = weight;
         }
 
-        public abstract void TO_Fly();
+        public abstract void ToFly();
 
-        public abstract void TO_Swim();
+        public abstract void ToSwim();
     }
     // Kiwi start
     public enum Kind
@@ -40,12 +40,12 @@ namespace main
             this._kind = kind;
         }
 
-        public override void TO_Fly()
+        public override void ToFly()
         {
             Console.WriteLine("Kiwi " + _name + " flew");
         }
 
-        public override void TO_Swim()
+        public override void ToSwim()
         {
             throw new NotImplementedException();
         }
@@ -73,12 +73,12 @@ namespace main
         {
             this._variety = variety;
         }
-        public override void TO_Fly()
+        public override void ToFly()
         {
             Console.WriteLine("Duck " + _name + " flew");
         }
 
-        public override void TO_Swim()
+        public override void ToSwim()
         {
             Console.WriteLine("And duck " + _name + " swam");
         }
@@ -106,12 +106,12 @@ namespace main
             this._sex = sex;
         }
 
-        public override void TO_Fly()
+        public override void ToFly()
         {
             throw new NotImplementedException();
         }
 
-        public override void TO_Swim()
+        public override void ToSwim()
         {
             Console.WriteLine("Penguin " + _name + " swam");
         }
@@ -139,12 +139,12 @@ namespace main
         {
             this._words = words;
         }
-        public override void TO_Fly()
+        public override void ToFly()
         {
             Console.WriteLine("Parrot " + _name + " flew");
         }
 
-        public override void TO_Swim()
+        public override void ToSwim()
         {
             throw new NotImplementedException();
         }

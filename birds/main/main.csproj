@@ -39,8 +39,8 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Bird.cs" />
-        <Compile Include="IFly.cs" />
-        <Compile Include="ISwim.cs" />
+        <Compile Include="IFlyable.cs" />
+        <Compile Include="ISwimable.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
