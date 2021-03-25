@@ -86,14 +86,14 @@ namespace GameFormsApp
             this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button0, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 30);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 28);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(632, 573);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(632, 575);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Click += new System.EventHandler(this.button15_Click);
             // 
@@ -104,7 +104,7 @@ namespace GameFormsApp
             this.button15.Location = new System.Drawing.Point(477, 435);
             this.button15.Margin = new System.Windows.Forms.Padding(5);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(149, 132);
+            this.button15.Size = new System.Drawing.Size(149, 134);
             this.button15.TabIndex = 15;
             this.button15.Tag = "15";
             this.button15.Text = "-";
@@ -118,7 +118,7 @@ namespace GameFormsApp
             this.button14.Location = new System.Drawing.Point(320, 435);
             this.button14.Margin = new System.Windows.Forms.Padding(5);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(146, 132);
+            this.button14.Size = new System.Drawing.Size(146, 134);
             this.button14.TabIndex = 14;
             this.button14.Tag = "14";
             this.button14.Text = "-";
@@ -132,7 +132,7 @@ namespace GameFormsApp
             this.button13.Location = new System.Drawing.Point(163, 435);
             this.button13.Margin = new System.Windows.Forms.Padding(5);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(146, 132);
+            this.button13.Size = new System.Drawing.Size(146, 134);
             this.button13.TabIndex = 13;
             this.button13.Tag = "13";
             this.button13.Text = "-";
@@ -146,7 +146,7 @@ namespace GameFormsApp
             this.button12.Location = new System.Drawing.Point(6, 435);
             this.button12.Margin = new System.Windows.Forms.Padding(5);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(146, 132);
+            this.button12.Size = new System.Drawing.Size(146, 134);
             this.button12.TabIndex = 12;
             this.button12.Tag = "12";
             this.button12.Text = "-";
@@ -328,7 +328,7 @@ namespace GameFormsApp
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(632, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(632, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 

@@ -16,6 +16,8 @@ namespace GameFormsApp
         int count = 0;
         int[] FirstPosition = new int[16];
         bool check = false;
+        int position;
+        int Counter = 0;
         public GameForm()
         {
             InitializeComponent();
@@ -24,7 +26,10 @@ namespace GameFormsApp
 
         private void button15_Click(object sender, EventArgs e)
         {
-            int position = Convert.ToInt16(((Button)sender).Tag);
+            try {
+                position = Convert.ToInt16(((Button)sender).Tag); 
+            }
+            catch { }
             game.PressedButton(position);
             ++count;
             Refresh();
@@ -32,7 +37,7 @@ namespace GameFormsApp
             {
                 Stopwatch.Stop();
                 MessageBox.Show("Congratulations, you did it... \nAmount of steps " + count.ToString(), "Notification");
-                MessageBox.Show("If you want to start a new game, press 'Menu -> Start new game'", "Notification");
+                MessageBox.Show("If you want to start a new game, press 'Menu -> Start new game'\nIf you want to repeat the game,press 'Menu->Repeat the game'", "Notification");
                 Stopwatch.Stop();
                 TimeBox.Text = "00:00";
                 count = 0;
@@ -95,8 +100,10 @@ namespace GameFormsApp
             for (int i = 0; i < 16; ++i)
             {
                 int ResultTag = FirstPosition[i];
-                game.GameRepeat(ResultTag);
+                game.GameRepeat(ResultTag, Counter);
+                ++Counter;
             }
+            Counter = 0;
             Refresh();
         }
 
@@ -118,6 +125,7 @@ namespace GameFormsApp
                 button(position).Text = number.ToString();
                 bool visiblePosition = number > 0;
                 button(position).Visible = visiblePosition;
+
             }
             if (count == 0 && check == false)
             {
@@ -130,10 +138,7 @@ namespace GameFormsApp
             }
         }
 
-        private void TimeBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void TimeBox_TextChanged(object sender, EventArgs e) { }
         DateTime date1 = new DateTime(0, 0);
         private void Stopwatch_Tick(object sender, EventArgs e)
         {
