@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
         bool CheckFirstStep = false;
         int moveX, moveY, CursorX, CursorY;
         string cheat;
+        bool superimposition = false;
         public GameForm()
         {
             InitializeComponent();
@@ -39,78 +40,108 @@ namespace WindowsFormsApp1
         {
             if (cheat == "AIWPRTON")
             {
+                buttonNo.Enabled = true;
                 return;
             }
             if (CheckFirstStep == false)
             {
-                moveX = (buttonNo.Width / 5);
-                moveY = (buttonNo.Height / 5);
+                moveX = (buttonNo.Width / 3);
+                moveY = (buttonNo.Height / 3);
                 CursorX = e.X;
                 CursorY = e.Y;
             }
+            superimposition = false;
+            buttonNo.Enabled = false;
             // правый нижний угол
-            if (CursorX >= buttonNo.Location.X - 2 && CursorX <= buttonNo.Location.X + (buttonNo.Width / 3) - 2)
+            if (CursorX >= buttonNo.Location.X - 20 && CursorX <= buttonNo.Location.X + (buttonNo.Width / 3) - 20)
             {
-                if (CursorY >= buttonNo.Location.Y - 2 && CursorY <= buttonNo.Location.Y + (buttonNo.Height / 3) - 2)
+                if (CursorY >= buttonNo.Location.Y - 20 && CursorY <= buttonNo.Location.Y + (buttonNo.Height / 3) - 20)
                 {
                     buttonNo.Location = new Point(buttonNo.Location.X + moveX, buttonNo.Location.Y + moveY);
+                    superimposition = true;
                 }
             }
             // вниз
-            if (CursorX >= buttonNo.Location.X + (buttonNo.Width / 3) - 2 && CursorX <= buttonNo.Location.X + 2 * (buttonNo.Width / 3) - 2)
+            if (CursorX >= buttonNo.Location.X + (buttonNo.Width / 3) - 20 && CursorX <= buttonNo.Location.X + 2 * (buttonNo.Width / 3) - 20)
             {
-                if (CursorY >= buttonNo.Location.Y - 2 && CursorY <= buttonNo.Location.Y + (buttonNo.Height / 3) - 2)
+                if (CursorY >= buttonNo.Location.Y - 20 && CursorY <= buttonNo.Location.Y + (buttonNo.Height / 3) - 20)
                 {
                     buttonNo.Location = new Point(buttonNo.Location.X, buttonNo.Location.Y + moveY);
+                    superimposition = true;
                 }
             }
             // в левый нижний угол
-            if (CursorX >= buttonNo.Location.X + 2 * (buttonNo.Width / 3) + 2 && CursorX <= buttonNo.Location.X + buttonNo.Width + 2)
+            if (CursorX >= buttonNo.Location.X + 2 * (buttonNo.Width / 3) + 20 && CursorX <= buttonNo.Location.X + buttonNo.Width + 20)
             {
-                if (CursorY >= buttonNo.Location.Y - 2 && CursorY <= buttonNo.Location.Y + (buttonNo.Height / 3) - 2)
+                if (CursorY >= buttonNo.Location.Y - 20 && CursorY <= buttonNo.Location.Y + (buttonNo.Height / 3) - 20)
                 {
                     buttonNo.Location = new Point(buttonNo.Location.X - moveX, buttonNo.Location.Y + moveY);
+                    superimposition = true;
                 }
             }
             // влево
-            if (CursorX >= buttonNo.Location.X + 2 * (buttonNo.Width / 3) + 2 && CursorX <= buttonNo.Location.X + buttonNo.Width + 2)
+            if (CursorX >= buttonNo.Location.X + 2 * (buttonNo.Width / 3) + 20 && CursorX <= buttonNo.Location.X + buttonNo.Width + 20)
             {
-                if (CursorY >= buttonNo.Location.Y + (buttonNo.Height / 3) - 2 && CursorY <= buttonNo.Location.Y + 2 * (buttonNo.Height / 3) + 2)
+                if (CursorY >= buttonNo.Location.Y + (buttonNo.Height / 3) - 20 && CursorY <= buttonNo.Location.Y + 2 * (buttonNo.Height / 3) + 20)
                 {
                     buttonNo.Location = new Point(buttonNo.Location.X - moveX, buttonNo.Location.Y);
+                    superimposition = true;
                 }
             }
             // в левый верхний угол
-            if (CursorX >= buttonNo.Location.X + 2 * (buttonNo.Width / 3) + 2 && CursorX <= buttonNo.Location.X + buttonNo.Width + 2)
+            if (CursorX >= buttonNo.Location.X + 2 * (buttonNo.Width / 3) + 20 && CursorX <= buttonNo.Location.X + buttonNo.Width + 20)
             {
-                if (CursorY >= buttonNo.Location.Y + 2 * (buttonNo.Height / 3) - 2 && CursorY <= buttonNo.Location.Y + buttonNo.Height + 2)
+                if (CursorY >= buttonNo.Location.Y + 2 * (buttonNo.Height / 3) - 20 && CursorY <= buttonNo.Location.Y + buttonNo.Height + 20)
                 {
                     buttonNo.Location = new Point(buttonNo.Location.X - moveX, buttonNo.Location.Y - moveY);
+                    superimposition = true;
                 }
             }
             // вверх
-            if (CursorX >= buttonNo.Location.X + (buttonNo.Width / 3) - 2 && CursorX <= buttonNo.Location.X + 2 * (buttonNo.Width / 3) - 2)
+            if (CursorX >= buttonNo.Location.X + (buttonNo.Width / 3) - 20 && CursorX <= buttonNo.Location.X + 2 * (buttonNo.Width / 3) - 20)
             {
-                if (CursorY >= buttonNo.Location.Y + 2 * (buttonNo.Height / 3) - 2 && CursorY <= buttonNo.Location.Y + buttonNo.Height + 2)
+                if (CursorY >= buttonNo.Location.Y + 2 * (buttonNo.Height / 3) - 20 && CursorY <= buttonNo.Location.Y + buttonNo.Height + 20)
                 {
                     buttonNo.Location = new Point(buttonNo.Location.X, buttonNo.Location.Y - moveY);
+                    superimposition = true;
                 }
             }
             // в правый верхний угол
-            if (CursorX >= buttonNo.Location.X - 2 && CursorX <= buttonNo.Location.X + (buttonNo.Width / 3) - 2)
+            if (CursorX >= buttonNo.Location.X - 20 && CursorX <= buttonNo.Location.X + (buttonNo.Width / 3) - 20)
             {
-                if (CursorY >= buttonNo.Location.Y + 2 * (buttonNo.Height / 3) - 2 && CursorY <= buttonNo.Location.Y + buttonNo.Height + 2)
+                if (CursorY >= buttonNo.Location.Y + 2 * (buttonNo.Height / 3) - 20 && CursorY <= buttonNo.Location.Y + buttonNo.Height + 20)
                 {
                     buttonNo.Location = new Point(buttonNo.Location.X + moveX, buttonNo.Location.Y - moveY);
+                    superimposition = true;
                 }
             }
             // вправо
-            if (CursorX >= buttonNo.Location.X - 2 && CursorX <= buttonNo.Location.X + (buttonNo.Width / 3) - 2)
+            if (CursorX >= buttonNo.Location.X - 20 && CursorX <= buttonNo.Location.X + (buttonNo.Width / 3) - 20)
             {
-                if (CursorY >= buttonNo.Location.Y + (buttonNo.Height / 3) - 2 && CursorY <= buttonNo.Location.Y + 2 * (buttonNo.Height / 3) - 2)
+                if (CursorY >= buttonNo.Location.Y + (buttonNo.Height / 3) - 20 && CursorY <= buttonNo.Location.Y + 2 * (buttonNo.Height / 3) - 20)
                 {
                     buttonNo.Location = new Point(buttonNo.Location.X + moveX, buttonNo.Location.Y);
+                    superimposition = true;
                 }
+            }
+
+            
+
+            Random random = new Random();
+
+            if (CursorX >= buttonNo.Location.X - 1 && CursorX <= buttonNo.Location.X + buttonNo.Width + 1) {
+                if (CursorY >= buttonNo.Location.Y - 1 && CursorY <= buttonNo.Location.Y + buttonNo.Height + 1) {
+                    int x = random.Next(0, this.ClientSize.Width);
+                    int y = random.Next(0, this.ClientSize.Height);
+                    buttonNo.Location = new Point(x, y);
+                }
+            }
+
+            if (superimposition = false)
+            {
+                int x = buttonNo.Location.X + 150;
+                int y = buttonNo.Location.Y + 150;
+                buttonNo.Location = new Point(x, y);
             }
 
             // верхняя граница
@@ -135,9 +166,8 @@ namespace WindowsFormsApp1
                 buttonNo.Location = new Point(buttonNo.Location.X, buttonNo.Location.Y - 200);
             }
             // если кнопки совпадут, то buttonNo переместиться
-            if (buttonYes.Location.X == buttonNo.Location.X && buttonYes.Location.Y == buttonNo.Location.Y) { 
-                buttonNo.Location = new Point(buttonNo.Location.X + 150, buttonNo.Location.Y - 100); 
-            }
+            
+            
         }
     }
 }
