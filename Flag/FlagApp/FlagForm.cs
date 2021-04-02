@@ -20,8 +20,9 @@ namespace FlagApp
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            if (ghanaFlag)
+            if (ghanaFlag) {
                 DrawingGhana(ClientRectangle, e.Graphics);
+            }
             else
             {
                 DrawingUK(ClientRectangle, e.Graphics);
