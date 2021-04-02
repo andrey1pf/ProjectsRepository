@@ -19,7 +19,6 @@ namespace FlagApp
         private bool ghanaFlag = true;
         protected override void OnPaint(PaintEventArgs e)
         {
-            base.OnPaint(e);
             if (ghanaFlag) {
                 DrawingGhana(ClientRectangle, e.Graphics);
             }
