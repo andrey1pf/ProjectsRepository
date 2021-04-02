@@ -21,13 +21,13 @@ namespace FlagApp
         {
             base.OnPaint(e);
             if (ghanaFlag)
-                DrawFlag_SAR(ClientRectangle, e.Graphics);
+                DrawingGhana(ClientRectangle, e.Graphics);
             else
             {
                 DrawingUK(ClientRectangle, e.Graphics);
             }
         }
-        private void DrawFlag_SAR(Rectangle r, Graphics g)
+        private void DrawingGhana(Rectangle r, Graphics g)
         {
             const int staticX = 2, staticY = 3;
 
